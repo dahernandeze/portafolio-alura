@@ -1,0 +1,149 @@
+/*importacion de fuentes desde google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*declaracion de variables para optimizar el uso de varios datos que se repiten*/
+:root{
+    --color-primario: #000000;
+    --color-secundario: #F6F6F6;
+    --color-terciario: #22D4FD;
+    --color-hover: #272727;
+    --fuente-montserrat: 'Montserrat', sans-serif;
+    --fuente-krona: 'krona One', sans-serif;
+}
+
+
+/*el asterisco indica que se va a hacer un cambio universal 
+en toda la pagina
+*/
+* {
+    padding: 0;
+    margin:0;
+}
+/*cambiamos la etiqueta body, el fondo y el color de los titulos*/
+body{
+    /*height: 100vh; /*para que la pagina ocupe el 100% de la pantalla*/
+    box-sizing: border-box;
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+     
+}
+
+.header{
+    padding: 2% 0% 0% 15%;
+
+}
+.header__menu{
+    display: flex;
+    gap: 80px;
+
+}
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+
+}
+
+
+/*el punto indica que vamos a alterar la clase titulo-destaque
+    y se va a colocar color azul en el texto*/
+.titulo-destaque{
+    color: var(--color-terciario);
+}
+
+.presentacion{
+    padding: 6% 15%;  /*crea una margen entre elementos horizontal y vertical*/ 
+    display: flex; /*coloca todo alineado algo al lado de algo*/
+    align-items: center; /*alinea elemento al centro*/
+    justify-content:space-between; /*crea un espacio entre elementos horizontalmente*/ 
+    gap: 82px;
+    }
+
+.presentacion__contenido{
+    width: 50%; 
+    display: flex;  /* coloca los cuadrados uno al lado del otro */
+    flex-direction: column;
+    gap: 40px; 
+}
+.presentacion__contenido__titulo{
+    font-size: 2.25rem; /*propiedad tamaño fuente*/
+    font-family: var(--fuente-krona);
+}
+
+.presentacion__contenido__texto{
+    font-size: 24px;
+    font-family: "Montserrat", sans-serif;
+}
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between; /*crea un espacio entre los 2 botones*/
+    flex-direction: column; /*coloca botones en columna*/
+    align-items: center; /*alinea botones al centro*/
+    gap: 32px; /*espacio entre columnas*/
+    
+}
+.presentacion__enlaces__link{
+    width: 50%;
+    /*background-color: #22D4FD;*/
+    text-align: center; /*alinea texto boton al centro*/
+    padding: 21.5px 0;
+    border-radius: 8px; /*borde curvo esquina botones*/
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;/*texto del boton sin la linea de abajo*/
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario); /*tamaño tipo de borde y color*/
+    display:flex;
+    justify-content: center;
+    gap: 10px;
+      
+}
+.presentacion__enlaces__link:hover{
+    background-color: var(--color-hover);
+
+}
+
+.presentacion__enlaces__subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.presentacion__imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+
+}
+
+/*parte responsiva antes en los width se usa el % 
+para hacer que el contenido varie su tamaño*/
+
+@media(max-width: 1200px){
+    
+    .header{
+        padding: 5%;
+
+    }
+    .header__menu{
+        justify-content: center;
+    }
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion__contenido{
+        width: auto;
+    }
+}
